@@ -1,0 +1,39 @@
+{ "menuItems": [                
+            {
+                    "label": "Home",
+                    "url": "home.html",
+                    "icon": "home"
+            },
+            {
+                     "label": "Store",
+                     "url": "store.html",
+                     "icon": "shopping-cart"
+            },
+            {
+                     "label": "Blog",
+                     "url": "blog.html",
+                     "icon": "pencil-square-o"
+            },
+            {
+                     "label": "Community",
+                     "url": "community.html",
+                     "icon": "users"
+            },
+            {
+                    "label": "Contests",
+                    "url": "contests.html",
+                    "icon": "glass"
+            },
+            {
+                    "label": "About",
+                    "url": "about.html",
+                    "icon":"info-circle"
+            },
+            {
+                    "label": "Contact",
+                    "url": "contact.html",
+                    "icon":"envelope-o"
+            }
+    ]         
+}        
+        

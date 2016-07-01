@@ -1,0 +1,213 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : May 11, 2016, 3:09:27 PM
+    Author     : nicoleta.local
+*/
+.container{
+    width:930px;
+    margin:30px;
+    border:1px solid #000;
+}
+.nav-bar-container{
+    width:100%;      
+    height:60px;
+    padding:0px;
+    background: #FFF;
+}
+.nav-bar-container .icon{
+    text-align:center;   
+    float:left;
+    width:60px;
+    height:60px;   
+    line-height:60px;
+    margin:0px auto; 
+    cursor:pointer;
+}
+.nav-bar-container .icon.menu-bar-icon,
+.horizontal-menu-right .search-wrapper .submit-search:hover,
+.horizontal-menu-right .search-wrapper .submit-search:focus,
+.horizontal-menu-right .search-wrapper .submit-search:active,
+.horizontal-menu-right .search-wrapper.visible .submit-search:hover,
+.horizontal-menu-right .search-wrapper.visible .submit-search:focus,
+.horizontal-menu-right .search-wrapper.visible .submit-search:active{     
+    background:#56ccc8;
+    color:#fff;    
+}
+.nav-bar-container .icon.social{
+    width:40px;
+    line-height:60px;  
+}
+.nav-bar-container .icon.social.fa-facebook{
+    padding:0px 0px 0px 15px;
+}
+.nav-bar-container .icon.social.fa-google-plus{
+    padding:0px 15px 0px 0px;
+}
+.nav-bar-container .icon.fa-search{
+    border-right:1px solid #dde2e4;
+    z-index:5;
+}
+.nav-bar-container .icon.fa-user{
+    border-left:1px solid #dde2e4;
+}
+.nav-bar-container .item{   
+    line-height:60px;
+    font-size:16px;
+    float:left;   
+    position:relative;
+}
+.nav-bar-container .item .item-descr{
+     color:#475055; 
+}
+.horizontal-menu-left .item{
+     padding-left:48px; 
+     padding:0px 0px 0px 48px;
+     color:#475055; 
+}
+.horizontal-menu-left{
+    display:block;
+    float:left;
+}
+.horizontal-menu-left.hide{
+    display:block;
+}
+.horizontal-menu-left .item .item-descr:hover,
+.horizontal-menu-left .item .item-descr:active,
+.horizontal-menu-left .item .item-descr:focus{
+    color:#56ccc8;
+}
+.horizontal-menu-right{
+    float:right;
+}
+.horizontal-menu-right .item,
+.horizontal-menu-right .item .item-descr{      
+    color:#c1c7ca;
+}
+.horizontal-menu-right .search-wrapper{
+    display:block;    
+    height:60px;
+    width:60px;
+    position:relative;
+    float:left;  
+    z-index:3;
+}
+.horizontal-menu-right .search-wrapper.visible{
+    width:200px;      
+}
+.horizontal-menu-right .search-wrapper.visible .icon.fa-search{  
+    border-right:0px;
+    position: absolute;
+    z-index: 1;
+    left:0px;
+    width:40px;
+    text-align:right;
+}
+.horizontal-menu-right .search-text{
+    width:190px;    
+    position:absolute;  
+    font-size:14px;
+    font-style:italic;
+    border:0px;
+    border-style:solid;
+    border-width:0px 1px 0px 0px;
+    border-color:#dde2e4;
+    height:60px;
+    padding:0px 10px 0 40px;
+    left:10px;  
+    display:none;
+}
+.horizontal-menu-right .visible .search-text{
+    display:block;
+    z-index:0;
+}
+.horizontal-menu-right .search-wrapper .submit-search{
+    position: absolute;
+    top:0px;
+    height:60px;
+    width: 177px;
+    line-height:60px;
+    border-radius:0; 
+    background: #fff;
+    border: 1px solid #dde2e4;
+    cursor: pointer;
+    color:#475055;
+    z-index:3;
+}
+.horizontal-menu-right .search-wrapper.visible .submit-search{   
+    left:201px;  
+}
+.horizontal-menu-right .search-text:focus{              
+     color:#475055;
+     font-style:normal;
+}
+.search-results .list-item-content{
+    overflow: hidden;
+    position: relative;
+    line-height:1.2em;
+    max-height:1.2em;
+    padding:0 1em 0 0;
+    width:295px;
+}
+.search-results .list-item-content:before{
+    content: '...';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+.search-results .list-item-content:after{
+    content: '';
+    position: absolute;
+    right: 0;
+    width: 1em;
+    height: 1em;
+    margin:0.2em 0 0 0;
+    background:#fff; 
+}
+.search-results{
+    position:absolute;
+    width:50%;
+    z-index:2;
+    right:0;
+    background:#fff;
+    z-index:2;
+    padding:30px 20px;
+    line-height: 30px;
+}
+.search-results .search-results-list{
+    color:#475055;
+    background:#fff;
+    margin:0;
+}
+.search-results .search-results-list .list-item{
+    line-height:50px;
+    width:100%;
+}
+.search-results .search-results-list .image-section{
+    width:50px;
+    height:50px;
+}
+.search-results .search-results-list .image-section,
+.search-results .search-results-list .list-item-content{
+    float:left;
+    margin:0 10px 0 0;
+    cursor:pointer;
+}
+.search-results .search-results-list .info{
+    background:url(../../../resources/images/info.svg);
+    cursor:pointer;
+    float:right;
+    height:25px;
+    width:25px;
+    border:1px solid  #dde2e4;
+    line-height:25px;
+    text-align:center;
+    border-radius:50%;
+    transition:transform 5s ease-in-out;   
+}
+.search-results .search-results-list .info.loading{     
+      transform:rotate(360deg);
+}
