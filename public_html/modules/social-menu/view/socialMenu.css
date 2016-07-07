@@ -25,6 +25,7 @@ and open the template in the editor.
      color:#475055;
      transition:color 1s ease-in;
      display:inline-block;
+     cursor:pointer;
 }
 .social-menu-list .item .icon{
     width:40px;

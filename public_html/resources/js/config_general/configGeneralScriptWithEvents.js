@@ -27,9 +27,9 @@
         $.each(data,function(index,element){
            if(index === "callConfiguration"){
                generateSelectOptions(element);
-           }else if(index === "menuConfiguration"){
+           }/*else if(index === "menuConfiguration"){
                generateMenuOptions(element);
-           }
+           }*/
        });
     };
     

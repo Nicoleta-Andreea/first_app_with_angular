@@ -75,6 +75,9 @@ and open the template in the editor.
 .horizontal-menu-left.hide{
     display:block;
 }
+.horizontal-menu-left .item{
+    cursor:pointer;
+}
 .horizontal-menu-left .item .item-descr:hover,
 .horizontal-menu-left .item .item-descr:active,
 .horizontal-menu-left .item .item-descr:focus{

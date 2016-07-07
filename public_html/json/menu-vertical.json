@@ -1,0 +1,37 @@
+[
+   {
+      "label":"Home", 
+      "icon":"home",
+      "href":"home"      
+   },
+   {
+       "label":"Store",
+       "icon":"shopping-cart",
+       "href":"shoppingCartExternal"
+   },
+   {
+       "label":"Join Newsletter",
+       "icon":"pencil-square-o",
+       "href":"join-newsletter"
+   },
+   {
+       "label":"Community",
+       "icon":"users",
+       "href":"social-media"
+   },
+   {
+       "label":"Contests",
+       "icon":"glass",
+       "href":"external"
+   },
+   {
+       "label":"Sign in",
+       "icon":"info-circle",       
+       "href":"sign-in"
+   },
+   {
+       "label":"Contact",
+       "icon":"envelope-o",
+       "href":"contact"
+   }
+]

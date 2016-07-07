@@ -1,0 +1,18 @@
+<!-- HORIZONTAL MENU -->
+    <nav class="nav-bar-container">
+         <i class="fa fa-2x fa-bars menu-bar-icon icon"></i>     
+         <!-- HORIZONTAL MENU LEFT -->
+         <ul id="horizontalMenuLeft" class="horizontal-menu-left">
+             <li class="item" ng-repeat="menuItem in horizontalMenuItems">
+                 <a class="item-descr clearfix" ui-sref="{{menuItem.href}}">{{menuItem.label}}</a>
+             </li>
+         </ul>
+         <!-- END HORIZONTAL MENU LEFT -->
+         
+         <!-- menu right + search results list -->
+         <menu-horizontal-right> </menu-horizontal-right>
+         
+         <!-- END menu right + search results list -->
+   </nav>                       
+<!-- END HORIZONTAL MENU -->  
+                         

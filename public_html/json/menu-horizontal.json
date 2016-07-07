@@ -1,0 +1,23 @@
+[
+    {
+        "label":"Home",
+        "href":"home"
+    },
+    {
+        "label":"Store",
+        "href":"store"
+    },
+    {
+        "label":"Blog",
+        "href":"blog"
+    },
+    {
+        "label":"Quote",
+        "href":"quote"
+    },
+    {
+        "label":"Contact",
+        "href":"contact"
+    }    
+]
+

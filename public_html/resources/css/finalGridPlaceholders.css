@@ -123,7 +123,6 @@ body{
     width:100%;
 }
 .wrapper .row-2 .column-1 .sub-column-1 .row:last-of-type{
-    background:#bababa;
     width:100%;    
 }
 .wrapper .row-2 .column-2 .row-1{
@@ -131,7 +130,6 @@ body{
 }
 .wrapper .row-2 .column-2 .row-1 .column:first-of-type{
      width:217px;
-     background:#b0b54f;
      margin:0 15px 0 0;
 }
 .wrapper .row-2 .column-2 .row-1 .column:last-of-type{
@@ -154,19 +152,15 @@ body{
 .wrapper .row-2 .column-2 .row-3{
     height:163px;   
 }
-.wrapper .row-2 .column-2 .row-2{
-    background:#cb30d4;
-    width:450px;
-}
+.wrapper .row-2 .column-2 .row-2,
 .wrapper .row-2 .column-2 .row-3{
-    width:450px;
-    background:#f69206;
+      width:450px;
+      text-align:center;
 }
 .wrapper .row-3{
     height:300px;
     margin:14px 0 0 0;
-    width:100%;
-    background:#06f51d; 
+    width:100%;  
 }
 .wrapper .row-4{
     height:300px;
@@ -175,11 +169,9 @@ body{
 .wrapper .row-4 .column:first-of-type{
     width:300px;
     margin:0 15px 0 0;
-    background:#fff701;
 }
 .wrapper .row-4 .column:last-of-type{
     width:615px;
-    background:#125b02;
 }
 .wrapper .row-5{
     height:1384px;
@@ -204,7 +196,6 @@ body{
     margin:13px 0 0 0;
 }
 .wrapper .row-5 .column-1 .row-2{
-    background:#352736;
     width:100%;
 }
 .wrapper .row-5 .column-1 .row-3{
@@ -220,11 +211,9 @@ body{
 .wrapper .row-5 .column-2 .row-1 .column-1{
     width:301px;
     margin:0 13px 0 0;
-    background:#f4989d;
 }
 .wrapper .row-5 .column-2 .row-1 .column-2{
     width:301px;
-    background:#4f064d;
 }
 .wrapper .row-5 .column-2 .row-2{
     height:602px;
@@ -240,7 +229,6 @@ body{
 }
 .wrapper .row-5 .column-2 .row-3{
     width:100%;
-    background:#c66e7a;
 }
 .wrapper .row-5 .column-2 .row-4{
     height:280px;
@@ -258,4 +246,10 @@ body{
 }
 .accordion-element.hide{
     display:block;
+}
+span.ng-scope{
+    color:#fff;
+    font-size:18px;
+    line-height:3em;
+    text-align:center;
 }
