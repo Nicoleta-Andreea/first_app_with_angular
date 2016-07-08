@@ -4,13 +4,18 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/wamp64/www/Git/first_app_with_angular/public_html/modules/menu-vertical/model/menu-vertical.model.js</file>
-            <file>file:/C:/wamp64/www/Git/first_app_with_angular/public_html/modules/menu-vertical/view/menu-vertical.template.html</file>
-            <file>file:/C:/wamp64/www/Git/first_app_with_angular/public_html/modules/menu-horizontal/view/menu-horizontal.template.html</file>
-            <file>file:/C:/wamp64/www/Git/first_app_with_angular/public_html/json/menu-vertical.json</file>
+            <file>file:/C:/wamp64/www/Git/first_app_with_angular/public_html/modules/menu-horizontal/view/menu-horizontal-right.template.html</file>
+            <file>file:/C:/wamp64/www/Git/first_app_with_angular/public_html/modules/menu-horizontal/model/search.js</file>
+            <file>file:/C:/wamp64/www/Git/first_app_with_angular/public_html/modules/menu-horizontal/view/search-list.template.html</file>
+            <file>file:/C:/wamp64/www/Git/first_app_with_angular/public_html/modules/menu-horizontal/model/menu-horizontal.model.js</file>
+            <file>file:/C:/wamp64/www/Git/first_app_with_angular/public_html/json/search1.json</file>
             <file>file:/C:/wamp64/www/Git/first_app_with_angular/public_html/resources/js/angular_first_app.js</file>
             <file>file:/C:/wamp64/www/Git/first_app_with_angular/public_html/json/menu-horizontal.json</file>
             <file>file:/C:/wamp64/www/Git/first_app_with_angular/public_html/index.html</file>
-            <file>file:/C:/wamp64/www/Git/first_app_with_angular/public_html/modules/menu-horizontal/model/menuHorizontal.js</file>
+            <file>file:/C:/wamp64/www/Git/first_app_with_angular/public_html/modules/menu-horizontal/controller/menu-horizontal.directive.js</file>
+            <file>file:/C:/wamp64/www/Git/first_app_with_angular/public_html/modules/menu-vertical/view/menu-vertical.template.html</file>
+            <file>file:/C:/wamp64/www/Git/first_app_with_angular/public_html/modules/menu-horizontal/view/menu-horizontal.template.html</file>
+            <file>file:/C:/wamp64/www/Git/first_app_with_angular/public_html/modules/menu-vertical/controller/menu-vertical.controller.js</file>
             <file>file:/C:/wamp64/www/Git/first_app_with_angular/public_html/modules/menu-horizontal/controller/menu-horizontal.controller.js</file>
         </group>
     </open-files>

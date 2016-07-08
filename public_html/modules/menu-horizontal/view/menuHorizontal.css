@@ -26,6 +26,7 @@ and open the template in the editor.
     line-height:60px;
     margin:0px auto; 
     cursor:pointer;
+    color:#c1c7ca;
 }
 .nav-bar-container .icon.menu-bar-icon,
 .horizontal-menu-right .search-wrapper .submit-search:hover,
@@ -108,6 +109,7 @@ and open the template in the editor.
     left:0px;
     width:40px;
     text-align:right;
+    color:#c1c7ca;
 }
 .horizontal-menu-right .search-text{
     width:190px;    

@@ -13,4 +13,14 @@ menuHorizontalModule.directive('menuHorizontal', [
         };
     }
  ]);
-        
+       
+menuHorizontalModule.directive('search',[
+    function(){
+        return{
+            restrict:'E',
+            controller:'searchItemsCtrl',
+            templateUrl:'modules/menu-horizontal/view/search-list.template.html'
+        };
+    }
+]);
+    

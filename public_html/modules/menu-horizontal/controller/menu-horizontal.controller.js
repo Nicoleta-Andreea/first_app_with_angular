@@ -6,28 +6,39 @@
 
 menuHorizontalModule.controller('horizontalMenuItemsCtrl',[
     'HorizontalMenuItemsList', 
-    '$scope',
-    
+    '$scope',    
     function(HorizontalMenuItemsList,$scope){
         $scope.horizontalMenuItems = HorizontalMenuItemsList.query();
     }
 ]);
 
 menuHorizontalModule.controller('searchItemsCtrl',[
+    '$scope', 
     'SearchItemsList',
-    '$scope',
     
-    function constructSearchItemsList(SearchItemsList,$scope){
-        var textLength  =  $scope.textLength,
-            text        =  $scope.text,
-            fileName    =  "search"+textLength,
-            params      =  {'itemsFile':fileName, 'text':text};
-        
-            $scope.searchListOption = SearchItemsList.query(params); 
-           
-    }
+     function displaySearchListOptions($scope,SearchItemsList){
+        var text        =  $scope.text,
+            textLength  =  text.length,
+            fileName    =  "search"+textLength;
+
+        params  =  {'itemsFile':fileName, 'text':text};
+        $scope.searchListOptions = SearchItemsList(params).query();   
+    },
+    
+    function displaySearchArea($scope){
+        $scope.showHideSearch = function(){
+              angular.element(".search-wrapper").toggleClass("visible");
+              angular.element("#submitSearch").toggleClass("hide");                
+        };
+    }  
 ]);
 
+  /*searchContainer      =  $(".search-results"),
+        searchWrapper        =  $(".search-wrapper"),
+        searchResultsList    =  searchContainer.find(".search-results-list"),
+        searchField          =  searchWrapper.find(".search-text"),
+        submitSearch         =  searchWrapper.find("#submitSearch"),
+        searchIcon           =  searchWrapper.find("#searchIcon"),
 
 /*menuHorizontal.service('SearchItemsList',[
     '$resource',

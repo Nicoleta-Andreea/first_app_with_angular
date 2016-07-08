@@ -20,11 +20,11 @@ menuHorizontalModule.service('HorizontalMenuItemsList',[
 
 menuHorizontalModule.service('SearchItemsList',[
     '$resource',
-     this.retrieveSearchItems = function($resource,$params){
+     this.retrieveSearchItems = function($resource){
          return $resource('json/:itemsFile.json', {} ,{
              query:{
                  method: 'GET',
-                 params: params,
+                 params: {itemsFile:itemsFile,text:text},
                  isArray:true
              }
          }); 
