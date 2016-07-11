@@ -19,16 +19,16 @@ menuHorizontalModule.service('HorizontalMenuItemsList',[
 ]);
 
 menuHorizontalModule.service('SearchItemsList',[
-    '$resource',
-     this.retrieveSearchItems = function($resource){
+    '$resource',    
+    this.retrieveSearchItems = function($resource){
          return $resource('json/:itemsFile.json', {} ,{
              query:{
                  method: 'GET',
-                 params: {itemsFile:itemsFile,text:text},
+                 params:{itemsFile:'@itemsFile'},
                  isArray:true
              }
          }); 
-     }
+     }   
 ]);
 
 

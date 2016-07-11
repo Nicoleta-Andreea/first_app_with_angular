@@ -1,15 +1,15 @@
 [
   {
-    "image": "img_first.png",
-    "large_image":"img_first_large.png",
+    "image": "resources/images/img_first.png",
+    "large_image":"resources/images/img_first_large.png",
     "description": {
       "text": "First item description. Home page",
       "extra": {
         "title": "Home",
         "content": "First Item long description",
         "image": [
-          "img1.jpg",
-          "img2.jpg"
+          "resources/images/search/img1.jpg",
+          "resources/images/search/img2.jpg"
         ]
       }
     },

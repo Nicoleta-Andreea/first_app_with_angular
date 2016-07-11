@@ -7,31 +7,50 @@
 menuHorizontalModule.controller('horizontalMenuItemsCtrl',[
     'HorizontalMenuItemsList', 
     '$scope',    
+    
     function(HorizontalMenuItemsList,$scope){
         $scope.horizontalMenuItems = HorizontalMenuItemsList.query();
     }
 ]);
 
 menuHorizontalModule.controller('searchItemsCtrl',[
-    '$scope', 
     'SearchItemsList',
-    
-     function displaySearchListOptions($scope,SearchItemsList){
-        var text        =  $scope.text,
-            textLength  =  text.length,
-            fileName    =  "search"+textLength;
-
-        params  =  {'itemsFile':fileName, 'text':text};
-        $scope.searchListOptions = SearchItemsList(params).query();   
-    },
-    
-    function displaySearchArea($scope){
-        $scope.showHideSearch = function(){
-              angular.element(".search-wrapper").toggleClass("visible");
-              angular.element("#submitSearch").toggleClass("hide");                
-        };
-    }  
+    '$scope', 
+     
+     function(SearchItemsList,$scope){
+        $scope.displaySearchListOptions = function(){
+            var searchedText  =  $scope.searchedText,
+                textLength    =  searchedText.length,
+                fileName      =  'search'+textLength;
+           
+            var searchListOptions = SearchItemsList.query({itemsFile:fileName});
+       
+            searchListOptions.$promise.then(function(data) {
+                // success
+               
+                 jsonList  = angular.toJson(data);
+                 $scope.searchListOptions  = angular.fromJson(jsonList);
+                 console.log($scope.searchListOptions);
+                
+             }, function(errResponse) {
+                // fail
+                console.log("error while getting options list:"+JSON.stringify(errResponse));
+           });
+            
+            /*$scope.searchListOptions.$promise.then(function(data) {
+                console.log(data);
+                
+            });  */
+        },        
+        
+        $scope.displaySearchArea = function(){
+            angular.element(".search-wrapper").toggleClass("visible");
+            angular.element("#submitSearch").toggleClass("hide");  
+        }
+     }   
 ]);
+
+  
 
   /*searchContainer      =  $(".search-results"),
         searchWrapper        =  $(".search-wrapper"),
