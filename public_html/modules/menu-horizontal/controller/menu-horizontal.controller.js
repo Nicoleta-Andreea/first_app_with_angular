@@ -8,40 +8,26 @@ menuHorizontalModule.controller('horizontalMenuItemsCtrl',[
     'HorizontalMenuItemsList', 
     '$scope',    
     
-    function(HorizontalMenuItemsList,$scope){
-        $scope.horizontalMenuItems = HorizontalMenuItemsList.query();
-    }
+    function(HorizontalMenuItemsList,$scope){                
+        var menuItemsResource = HorizontalMenuItemsList.getItems({itemsFile:'menu-horizontal'});        
+        $scope.horizontalMenuItems = menuItemsResource;
+    }  
 ]);
 
 menuHorizontalModule.controller('searchItemsCtrl',[
-    'SearchItemsList',
+    'HorizontalMenuItemsList',
     '$scope', 
      
-     function(SearchItemsList,$scope){
+     function(HorizontalMenuItemsList,$scope){
         $scope.displaySearchListOptions = function(){
             var searchedText  =  $scope.searchedText,
                 textLength    =  searchedText.length,
-                fileName      =  'search'+textLength;
-           
-            var searchListOptions = SearchItemsList.query({itemsFile:fileName});
-       
-            searchListOptions.$promise.then(function(data) {
-                // success
-               
-                 jsonList  = angular.toJson(data);
-                 $scope.searchListOptions  = angular.fromJson(jsonList);
-                 console.log($scope.searchListOptions);
-                
-             }, function(errResponse) {
-                // fail
-                console.log("error while getting options list:"+JSON.stringify(errResponse));
-           });
-            
-            /*$scope.searchListOptions.$promise.then(function(data) {
-                console.log(data);
-                
-            });  */
+                fileName      =  'search'+textLength;    
+        
+             $scope.searchListOptions = HorizontalMenuItemsList.getItems({itemsFile:'menu-horizontal'});
         },        
+                
+          
         
         $scope.displaySearchArea = function(){
             angular.element(".search-wrapper").toggleClass("visible");
