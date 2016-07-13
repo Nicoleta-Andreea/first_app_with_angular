@@ -5,13 +5,15 @@
         <group>
             <file>file:/C:/wamp64/www/Git/first_app_with_angular/public_html/modules/menu-horizontal/controller/menu-horizontal.directive.js</file>
             <file>file:/C:/wamp64/www/Git/first_app_with_angular/public_html/modules/menu-horizontal/view/menu-horizontal-right.template.html</file>
+            <file>file:/C:/wamp64/www/Git/first_app_with_angular/public_html/modules/menu-horizontal/view/menuHorizontal.css</file>
+            <file>file:/C:/wamp64/www/Git/first_app_with_angular/public_html/modules/calendar/controller/calendar.directive.js</file>
             <file>file:/C:/wamp64/www/Git/first_app_with_angular/public_html/modules/menu-horizontal/view/menu-horizontal.template.html</file>
             <file>file:/C:/wamp64/www/Git/first_app_with_angular/public_html/modules/menu-horizontal/view/search-list.template.html</file>
             <file>file:/C:/wamp64/www/Git/first_app_with_angular/public_html/modules/menu-horizontal/model/menu-horizontal.model.js</file>
             <file>file:/C:/wamp64/www/Git/first_app_with_angular/public_html/resources/js/angular_first_app.js</file>
+            <file>file:/C:/wamp64/www/Git/first_app_with_angular/public_html/modules/calendar/model/calendar.model.js</file>
             <file>file:/C:/wamp64/www/Git/first_app_with_angular/public_html/index.html</file>
             <file>file:/C:/wamp64/www/Git/first_app_with_angular/public_html/modules/menu-horizontal/controller/menu-horizontal.controller.js</file>
-            <file>file:/C:/wamp64/www/Git/first_app_with_angular/public_html/modules/menu-horizontal/model/menuHorizontal.js</file>
         </group>
     </open-files>
 </project-private>

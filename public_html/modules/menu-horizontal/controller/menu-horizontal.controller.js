@@ -9,8 +9,8 @@ menuHorizontalModule.controller('horizontalMenuItemsCtrl',[
     '$scope',    
     
     function(HorizontalMenuItemsList,$scope){                
-        var menuItemsResource = HorizontalMenuItemsList.getItems({itemsFile:'menu-horizontal'});        
-        $scope.horizontalMenuItems = menuItemsResource;
+        var menuItemsResource       =  HorizontalMenuItemsList.getItems({itemsFile:'menu-horizontal'});        
+        $scope.horizontalMenuItems  =  menuItemsResource;
     }  
 ]);
 
@@ -18,21 +18,22 @@ menuHorizontalModule.controller('searchItemsCtrl',[
     'HorizontalMenuItemsList',
     '$scope', 
      
-     function(HorizontalMenuItemsList,$scope){
-        $scope.displaySearchListOptions = function(){
+     function(HorizontalMenuItemsList,$scope){        
+         $scope.displaySearchListOptions = function(){
             var searchedText  =  $scope.searchedText,
                 textLength    =  searchedText.length,
-                fileName      =  'search'+textLength;    
-        
-             $scope.searchListOptions = HorizontalMenuItemsList.getItems({itemsFile:'menu-horizontal'});
-        },        
-                
-          
+                fileName      =  'search'+textLength;  
+         
+            if(textLength > 0){        
+                var searchItemsResource   =  HorizontalMenuItemsList.getItems({itemsFile:fileName});
+                $scope.searchListOptions  =  searchItemsResource;
+            }       
+        },          
         
         $scope.displaySearchArea = function(){
             angular.element(".search-wrapper").toggleClass("visible");
             angular.element("#submitSearch").toggleClass("hide");  
-        }
+        }        
      }   
 ]);
 

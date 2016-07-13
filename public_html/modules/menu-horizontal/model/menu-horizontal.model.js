@@ -10,13 +10,13 @@ menuHorizontalModule.service('HorizontalMenuItemsList',[
         function($resource){         
           var retrieveHorizontalMenuItems = function(url) {
              var ItemsResource = $resource('json/:itemsFile.json',{}, {             
-                    query: {
+                    retrieve: {
                       method: 'GET',
                       params: {itemsFile:'@url'},
                       isArray: true
                     }                    
             });            
-            return ItemsResource.query(url);           
+            return ItemsResource.retrieve(url);           
           };      
         
           this.getItems = function(url){

@@ -23,6 +23,20 @@ and open the template in the editor.
     border-width:1px 0 0 0;
     border-style:solid;
     border-color:#fff;
+    width:50%;
+    height:199px;
+    float:left;   
+}
+.main-menu .main-item.left{
+    border-style:solid; 
+    border-width:1px 1px 0px 0px;
+    border-color:#fff;
+}
+.main-menu .main-item.first{
+    border-width:0;
+}
+.main-menu .main-item.left.first{
+    border-width:0 1px 0 0;
 }
 .main-menu .main-item .expandable{
     display: inline-block;
@@ -60,9 +74,6 @@ and open the template in the editor.
     margin-left:-4px;
     margin-top:-5px;
 }
-.main-menu .main-item.first{
-    border-width:0;
-}
 .main-menu .main-item:hover,
 .main-menu .main-item:focus,
 .main-menu .main-item:active{
@@ -74,7 +85,7 @@ and open the template in the editor.
     display:inline-block;
     width: 100%;
     cursor: pointer;
-    height:21px;
+    height:32px;
 }
 .submenu{
     margin-top:9px;

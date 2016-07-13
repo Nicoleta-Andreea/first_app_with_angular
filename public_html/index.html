@@ -116,62 +116,70 @@ and open the template in the editor.
                
                 <div class="row row-2 clearfix">
                     <div class="column column-1">
-                        <div class="column sub-column-1">
-                            <div class="row clearfix" ng-include="'modules/menu-vertical/view/menu-vertical.template.html'">
+                         <div class="row clearfix" ng-include="'modules/menu-vertical/view/menu-vertical.template.html'">
                                 <!--<div class="column">-->
                                     <!-- VERTICAL MENU -->    
                                                                    
                                    <!-- END VERTICAL MENU -->
                                <!-- </div> -->
-                            </div>
-                            <div class="row clearfix" ui-view='contact-view'>
-                                <!--<div class="column">-->
+                        </div>
+                        <!--<div class="column sub-column-1">
+                           
+                            
+                            <div class="row clearfix">
+                                <div class="column">-->
                                      <!-- CONTACT BOX -->
-                                            Place for contact
+                                           
                                   <!--  END CONTACT BOX -->
-                                <!--</div>-->
+                                <!--</div>
                             </div>    
-                        </div>   
-                        <div class="column sub-column-2" ng-include="'modules/submenu/view/submenu.template.html'">
-                            <!--  SUBMENU -->
-                                
-                           <!--  END SUBMENU -->                            
-                        </div>   
+                        </div>   -->                       
                     </div>  
-                    <div class="column column-2">
-                           <div class="row row-1 clearfix">
-                                <div class="column" ui-view="social-media-view">
-                                     <!-- SOCIAL MENU -->       
-                                      Place for social 
-                                    <!-- END SOCIAL MENU -->
+                    <div class="column column-2" ng-include="'modules/submenu/view/submenu.template.html'">
+                        <!-- <div class="row row-1 clearfix">
+                                <div class="column">
+                                     SOCIAL MENU -->       
+                                     
+                                    <!-- END SOCIAL MENU 
                                 </div>  
-                                <div class="column" ui-view="social-widgets-view">
+                                <div class="column">
                                      Place for social widgets
                                 </div> 
                             </div>   
-                            <div class="row row-2" ui-view="sign-in-view">
-                                <!--<div class="column">-->
+                            <div class="row row-2">
+                                <div class="column">-->
                                      <!-- SIGN IN WIDGET -->
-                                           Here comes the sign-in widget
+                                          
                                      <!-- END SIGN IN WIDGET -->
-                                <!--</div>--> 
-                            </div> 
-                            <div class="row row-3" ui-view="newsletter-view">
-                                <!--<div class="column">-->
+                                <!--</div>
+                            </div>-->  
+                            <!--<div class="row row-3">
+                                <div class="column">-->
                                     <!-- NEWSLETTER -->
-                                         Here comes the newsletter widget
+                                     
                                     <!-- END NEWSLETTER -->
-                                <!--</div>--> 
-                            </div>                          
-                    </div>    
+                                <!--</div> 
+                            </div> -->
+                            <!--  <div class="column sub-column-2" ng-include="'modules/submenu/view/submenu.template.html'">
+                               SUBMENU -->
+                                
+                               <!--  END SUBMENU                            
+                            </div>    
+                        </div> --> 
+                   
                 </div>
-               <div class="row row-3 clearfix" ui-view="blog-view">
-                   <!-- <div class="column"> -->
+              </div>    
+              <div class="row row-3 clearfix" ui-view ng-show="displayContainer">                                                                     
+                    <div class="column" ui-view="social-media-view"></div> 
+                    <div class="column" ui-view="social-widgets-view"></div>                                 
+               </div>    
+               <!--<div class="row row-3 clearfix">
+                    <div class="column"> -->
                           <!-- POST -->
-                           Blog's place
+                       
                           <!-- END POST -->
-                    <!--</div>-->    
-                </div>  
+                    <!--</div>   
+                </div>-->   
                 <div class="row row-4 clearfix">
                     <div class="column" ng-include="'modules/share-widget/view/share-widget.template.html'">
                         <!-- SHARE WIDGET -->
@@ -227,13 +235,15 @@ and open the template in the editor.
                                  <!-- POST DETAIL-->
                             <!-- </div> -->
                          </div> 
-                         <div class="row row-3 clearfix" ui-view='quote-view'>
+                         
+                        <!-- <div class="row row-3 clearfix">
                              <!--<div class="column">-->
                                   <!-- QUOTE -->
-                                        Quote
+                                      
                                   <!-- END QUOTE -->
-                             <!--</div>-->
-                         </div>
+                             <!--</div>
+                         </div>-->
+                             
                          <div class="row row-4 clearfix" ng-include="'modules/tabs/view/tabs.template.html'">
                              <!--<div class="column">-->
                               <!-- TABS -->

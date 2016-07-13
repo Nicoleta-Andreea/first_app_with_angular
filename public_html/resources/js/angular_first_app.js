@@ -14,8 +14,8 @@ app.config(function($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise('/home');     
     $stateProvider   
         .state('home',{          
-             url:''
-        })
+             url:'',
+         })
         .state('external',{
             url: 'https://www.google.com',
             external: true
@@ -25,20 +25,12 @@ app.config(function($stateProvider, $urlRouterProvider) {
             external:true
         })
         .state('quote',{
-            url:'/quote',
-            views:{
-                'quote-view':{
-                    templateUrl:'modules/quote/view/quote.template.html'
-                }
-            }
+            url:'/quote',           
+            templateUrl:'modules/quote/view/quote.template.html'           
         })
         .state('contact',{
-            url:'/contact',
-            views:{
-                'contact-view':{
-                    templateUrl:'modules/contact/view/contact.template.html'
-                }
-            }
+            url:'/contact',    
+            templateUrl:'modules/contact/view/contact.template.html'          
         })
         .state('shoppingCartExternal',{
             url:'https://www.tutorialspoint.com',
@@ -46,27 +38,15 @@ app.config(function($stateProvider, $urlRouterProvider) {
         })
         .state('sign-in',{
             url:'/sign-in',
-            views:{
-                'sign-in-view':{
-                    templateUrl:'modules/sign-in/view/sign-in.template.html'
-                }
-            }
+            templateUrl:'modules/sign-in/view/sign-in.template.html'       
         })
         .state('join-newsletter',{
             url:'/newsletter',
-            views:{
-                'newsletter-view':{
-                    templateUrl:'modules/newsletter/view/newsletter.template.html'
-                }
-            }
+            templateUrl:'modules/newsletter/view/newsletter.template.html'          
         })
         .state('blog',{
-                url:"/blog",
-                views:{
-                    'blog-view':{
-                        templateUrl:'modules/post/view/post.template.html'
-                    }
-                }
+                url:"/blog",                   
+                templateUrl:'modules/post/view/post.template.html'                
         })
         .state('social-media',{
             url:'/social-media',
