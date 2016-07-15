@@ -7,7 +7,8 @@ menuHorizontalModule.directive('menuHorizontalRight',[
     function(){
         return{
             restrict:'E',
-            templateUrl:'modules/menu-horizontal/view/menu-horizontal-right.template.html'
+            templateUrl:'modules/menu-horizontal/view/menu-horizontal-right.template.html',
+            
         };
     }
 ]);

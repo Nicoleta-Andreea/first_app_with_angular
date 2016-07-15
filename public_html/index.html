@@ -165,14 +165,15 @@ and open the template in the editor.
                                 
                                <!--  END SUBMENU                            
                             </div>    
-                        </div> --> 
-                   
+                        </div> -->                    
                 </div>
-              </div>    
-              <div class="row row-3 clearfix" ui-view ng-show="displayContainer">                                                                     
-                    <div class="column" ui-view="social-media-view"></div> 
-                    <div class="column" ui-view="social-widgets-view"></div>                                 
-               </div>    
+              </div> 
+                    
+              <div class="row row-3 clearfix toggleable-container" ui-view>                                                                     
+                    <div class="column column-1" ui-view="social-media-view"></div> 
+                    <div class="column column-2" ui-view="social-widgets-view"></div>                                 
+              </div> 
+                    
                <!--<div class="row row-3 clearfix">
                     <div class="column"> -->
                           <!-- POST -->
@@ -180,6 +181,7 @@ and open the template in the editor.
                           <!-- END POST -->
                     <!--</div>   
                 </div>-->   
+                    
                 <div class="row row-4 clearfix">
                     <div class="column" ng-include="'modules/share-widget/view/share-widget.template.html'">
                         <!-- SHARE WIDGET -->
@@ -192,6 +194,7 @@ and open the template in the editor.
                         <!-- END SIMPLE POST -->
                     </div> 
                 </div> 
+                    
                 <div class="row row-5 clearfix">
                      <div class="column column-1">
                          <div class="row row-1 clearfix" ng-include="'modules/latest-tweets/view/latest-tweets.template.html'">

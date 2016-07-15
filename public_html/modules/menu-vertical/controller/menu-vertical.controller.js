@@ -7,9 +7,19 @@
 menuVerticalModule.controller('menuVerticalCtrl',
     [ 
         '$scope',
-        'MenuItemsList',        
+        'MenuItemsList',
+        
         function($scope,MenuItemsList){       
-           $scope.menuVerticalItems = MenuItemsList.query();
+           $scope.menuVerticalItems = MenuItemsList.query();            
+           
+            $scope.changeClass = function(){
+                if($('.toggleable-container').hasClass("hidden")){
+                    $('.toggleable-container').removeClass('hidden');
+                }else{
+                    $('.toggleable-container').addClass('hidden');
+                }              
+              
+           }           
         }    
     ]                
 ); 

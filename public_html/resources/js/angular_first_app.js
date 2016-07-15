@@ -30,7 +30,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
         })
         .state('contact',{
             url:'/contact',    
-            templateUrl:'modules/contact/view/contact.template.html'          
+            templateUrl:'modules/contact/view/contact.template.html',
         })
         .state('shoppingCartExternal',{
             url:'https://www.tutorialspoint.com',
@@ -66,9 +66,13 @@ app.run(function($rootScope, $window) {
   $rootScope.$on('$stateChangeStart',
     function(event, toState, toParams, fromState, fromParams) {
       if (toState.external) {
-        event.preventDefault();
-        $window.open(toState.url, '_blank');
-      }
-    });
+         event.preventDefault();
+         $window.open(toState.url, '_blank');         
+    }      
+    
+        
+     if(!($('.toggleable-container').hasClass("hidden"))){
+           $('.toggleable-container').addClass("hidden");
+     }
+   })       
 });
-

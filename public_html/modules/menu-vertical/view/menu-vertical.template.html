@@ -4,8 +4,8 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-<nav id="verticalMenu" class="vertical-menu accordion-element hide" data-accordion="true" data-title="Vertical Menu" ng-controller="menuVerticalCtrl" >   
-    <a class="item"  ng-repeat="menuItem in menuVerticalItems" ui-sref="{{menuItem.href}}" ng-click="displayContainer">
+<nav id="verticalMenu" class="vertical-menu accordion-element hide" data-accordion="true" data-title="Vertical Menu" ng-controller="menuVerticalCtrl">   
+    <a class="item"  ng-repeat="menuItem in menuVerticalItems" ui-sref="{{menuItem.href}}" ng-click="changeClass()">
         <i class="fa fa-2x fa-{{menuItem.icon}}"></i>
         <span class="item-descr">{{menuItem.label}}</span>
     </a>       
