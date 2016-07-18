@@ -9,15 +9,40 @@ menuHorizontalModule.controller('horizontalMenuItemsCtrl',[
     '$scope',    
     
     function(HorizontalMenuItemsList,$scope){                
-        var menuItemsResource       =  HorizontalMenuItemsList.getItems({itemsFile:'menu-horizontal'});        
+        var menuItemsResource       =  HorizontalMenuItemsList.retrieveHorizontalMenuItems({itemsFile:'menu-horizontal'});        
         $scope.horizontalMenuItems  =  menuItemsResource;
     }  
 ]);
 
+menuHorizontalModule.controller('MenuRightCtrl',[
+    '$scope',    
+     function($scope){
+         var rightMenuItems = [
+             {
+                 "label":"facebook",
+                 "href":"#"
+             },
+             {
+                 "label":"twitter",
+                 "href":"#"
+             },
+             {
+                 "label":"google-plus",
+                 "href":"#"
+             },
+             {
+                 "label":"user",
+                 "href":"#"
+             }             
+         ];         
+       $scope.rightMenuItems = rightMenuItems;       
+     }
+]);
+
 menuHorizontalModule.controller('searchItemsCtrl',[
     'HorizontalMenuItemsList',
-    '$scope', 
-     
+    '$scope',   
+    
      function(HorizontalMenuItemsList,$scope){        
          $scope.displaySearchListOptions = function(){
             var searchedText  =  $scope.searchedText,
@@ -25,14 +50,17 @@ menuHorizontalModule.controller('searchItemsCtrl',[
                 fileName      =  'search'+textLength;  
          
             if(textLength > 0){        
-                var searchItemsResource   =  HorizontalMenuItemsList.getItems({itemsFile:fileName});
+                var searchItemsResource   =  HorizontalMenuItemsList.retrieveHorizontalMenuItems({itemsFile:fileName});
                 $scope.searchListOptions  =  searchItemsResource;
             }       
-        },          
+        },  
+        
+        $scope.searchAreaDisplayed = false;          
         
         $scope.displaySearchArea = function(){
-            angular.element(".search-wrapper").toggleClass("visible");
-            angular.element("#submitSearch").toggleClass("hide");  
+            $scope.searchAreaDisplayed = ($scope.searchAreaDisplayed === true) ? false : true; 
+            
+            console.log($scope.searchAreaDisplayed);
         }        
      }   
 ]);

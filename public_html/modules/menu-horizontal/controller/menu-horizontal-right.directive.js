@@ -8,7 +8,7 @@ menuHorizontalModule.directive('menuHorizontalRight',[
         return{
             restrict:'E',
             templateUrl:'modules/menu-horizontal/view/menu-horizontal-right.template.html',
-            
+            controller:'MenuRightCtrl'
         };
     }
 ]);

@@ -8,26 +8,26 @@ var menuHorizontalModule = angular.module('menu-horizontal-module',[]);
 menuHorizontalModule.service('HorizontalMenuItemsList',[
     '$resource',     
         function($resource){         
-          var retrieveHorizontalMenuItems = function(url) {
-             var ItemsResource = $resource('json/:itemsFile.json',{}, {             
-                    retrieve: {
+          this.retrieveHorizontalMenuItems = function(url) {
+            $resource('json/:itemsFile.json',{}, {             
+                    query: {
                       method: 'GET',
-                      params: {itemsFile:'@url'},
-                      isArray: true
+                      params: {itemsFile:'@url.itemsFile'},
+                      isArray: true,
+                      interceptor: {
+                        response: function(response) {
+                            console.log(response.data);
+                            
+                            return response.data.items;
+                        }
                     }                    
-            });            
-            return ItemsResource.retrieve(url);           
-          };      
-        
-          this.getItems = function(url){
-                 console.log(url);                   
-                 var items = angular.fromJson(retrieveHorizontalMenuItems(url));
-
-                 console.log(items);
-
-                 return items;
-          };          
-     }  
+            }.$promise.then(function(response){
+               console.log(response);
+           })                
+                 
+           })
+          }
+      },          
 ]);
 
 /*menuHorizontalModule.service('SearchItemsList',[

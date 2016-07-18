@@ -7,7 +7,7 @@
 var app=angular.module('angular-first-app',[
        'menu-vertical',
        'calendar-module',
-       'menu-horizontal-module'
+       'menu-horizontal-module'       
 ]);
 
 app.config(function($stateProvider, $urlRouterProvider) {    
