@@ -4,19 +4,22 @@
  * and open the template in the editor.
  */
 
-menuHorizontalModule.controller('horizontalMenuItemsCtrl',[
-    'HorizontalMenuItemsList', 
-    '$scope',    
-    
-    function(HorizontalMenuItemsList,$scope){                
-        var menuItemsResource       =  HorizontalMenuItemsList.retrieveHorizontalMenuItems({itemsFile:'menu-horizontal'});        
-        $scope.horizontalMenuItems  =  menuItemsResource;
+menuHorizontalModule.controller('horizontalMenuItemsCtrl',['ReadItemsFromJson','$scope',horizontalMenuItemsCtrl]);     
+    function horizontalMenuItemsCtrl(ReadItemsFromJson,$scope){      
+       ReadItemsFromJson.Items({itemsFile:'menu-horizontal'}).then(getItemsSuccess,getItemsError);   
+       
+       function getItemsSuccess(items){
+           $scope.horizontalMenuItems = items;
+           console.log($scope.horizontalMenuItems);
+       }
+       
+       function getItemsError(reason){
+           console.log(reason);
+       }
     }  
-]);
 
-menuHorizontalModule.controller('MenuRightCtrl',[
-    '$scope',    
-     function($scope){
+menuHorizontalModule.controller('MenuRightCtrl',['$scope',MenuRightCtrl]);  
+     function MenuRightCtrl($scope){
          var rightMenuItems = [
              {
                  "label":"facebook",
@@ -34,36 +37,41 @@ menuHorizontalModule.controller('MenuRightCtrl',[
                  "label":"user",
                  "href":"#"
              }             
-         ];         
+         ]   
        $scope.rightMenuItems = rightMenuItems;       
-     }
-]);
+    }
 
-menuHorizontalModule.controller('searchItemsCtrl',[
-    'HorizontalMenuItemsList',
-    '$scope',   
-    
-     function(HorizontalMenuItemsList,$scope){        
-         $scope.displaySearchListOptions = function(){
+
+menuHorizontalModule.controller('searchItemsCtrl',['ReadItemsFromJson','$scope',searchItemsCtrl]); 
+    function searchItemsCtrl(ReadItemsFromJson,$scope){        
+        var scope = $scope;
+        
+        $scope.displaySearchListOptions = function(){
             var searchedText  =  $scope.searchedText,
                 textLength    =  searchedText.length,
-                fileName      =  'search'+textLength;  
-         
-            if(textLength > 0){        
-                var searchItemsResource   =  HorizontalMenuItemsList.retrieveHorizontalMenuItems({itemsFile:fileName});
-                $scope.searchListOptions  =  searchItemsResource;
-            }       
-        },  
+                fileName      = 'search'+textLength;   
         
-        $scope.searchAreaDisplayed = false;          
+            if(textLength > 0){
+                ReadItemsFromJson.Items({itemsFile:'menu-horizontal'}).then(getItemsSuccess,getItemsError);   
+
+                function getItemsSuccess(items){                    
+                    console.log(items);                    
+                    scope.horizontalMenuItems  = items;                
+                }
+
+                function getItemsError(reason){
+                    console.log(reason);
+                }          
+            }                 
+        }             
+                     
+        $scope.searchAreaDisplayed = false;
         
         $scope.displaySearchArea = function(){
-            $scope.searchAreaDisplayed = ($scope.searchAreaDisplayed === true) ? false : true; 
-            
-            console.log($scope.searchAreaDisplayed);
+            $scope.searchAreaDisplayed = ($scope.searchAreaDisplayed === true) ? false : true;             
         }        
-     }   
-]);
+    }   
+
 
   
 

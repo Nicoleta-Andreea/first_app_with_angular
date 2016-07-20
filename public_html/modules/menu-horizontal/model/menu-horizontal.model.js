@@ -5,30 +5,83 @@
  */
 var menuHorizontalModule = angular.module('menu-horizontal-module',[]);
 
-menuHorizontalModule.service('HorizontalMenuItemsList',[
-    '$resource',     
-        function($resource){         
-          this.retrieveHorizontalMenuItems = function(url) {
-            $resource('json/:itemsFile.json',{}, {             
-                    query: {
-                      method: 'GET',
-                      params: {itemsFile:'@url.itemsFile'},
-                      isArray: true,
-                      interceptor: {
-                        response: function(response) {
-                            console.log(response.data);
-                            
-                            return response.data.items;
-                        }
-                    }                    
-            }.$promise.then(function(response){
-               console.log(response);
-           })                
+menuHorizontalModule.service('ReadItemsFromJson',['$resource','$q','$timeout',ReadItemsFromJson]);    
+     function ReadItemsFromJson($resource,$q,$timeout){
+        this.Items = function(url){
+            var itemsResource = $resource('json/:itemsFile.json',{}, {             
+                query: {
+                  method: 'GET',
+                  params: {itemsFile:'@url.itemsFile'},
+                  isArray: true,                                     
+               }    
+            });
+            
+            var itemsArray = itemsResource.query(url);
+           
+            console.log(url);
+            
+            var deferred = $q.defer();
+            
+            $timeout(function(){
+                var successful = true;
+                if(successful){
+                    deferred.resolve(itemsArray);
+                }else{
+                    deferred.reject('Error retrieving menu items');
+                }
+            }, 6000);
+            
+            return deferred.promise;          
+      }
+  }  
+
+
+
+/*menuHorizontalModule.service('GetItems',[
+    'ReadItemsFromJson',        
+    function(ReadItemsFromJson){
+        this.itemsList = function(url){   
+            var items = [];             
+             return ReadItemsFromJson.Items().query(url).$promise.then(function(response){
                  
-           })
-          }
-      },          
+                  /*var itemsResource = angular.fromJson(response); 
+                  
+                  $.each(itemsResource,function(index){                                    
+                      items.push(itemsResource[index]);                     
+                  });  
+                 
+                 return response;
+            });           
+        }
+    }
+]);*/
+
+/*menuHorizontalModule.factory('ItemsFactory',[
+        '$resource',
+         function($resource){        
+           ItemsFactory.retrieveItems = function($resource){         
+            var Items = $resource('json/:itemsFile.json',{}, {             
+                query: {
+                  method: 'GET',
+                  params: {itemsFile:'@url.itemsFile'},
+                  isArray: true,                                     
+             }                
+           })           
+          }          
+          return ItemsFactory;
+      }   
+]);     
+
+menuHorizontalModule.service('HorizontalMenuItemsList',[
+    'ItemsFactory',
+    
+     this.getItems = function(url,ItemsFactory){
+         ItemsFactory.retrieveItems().query(url).$promise.then(function(response){
+              console.log(response);
+         });      
+     }
 ]);
+*/
 
 /*menuHorizontalModule.service('SearchItemsList',[
  

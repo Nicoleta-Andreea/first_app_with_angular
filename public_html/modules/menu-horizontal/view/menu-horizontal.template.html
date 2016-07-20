@@ -3,16 +3,24 @@
          <i class="fa fa-2x fa-bars menu-bar-icon icon"></i>     
          <!-- HORIZONTAL MENU LEFT -->
          <ul id="horizontalMenuLeft" class="horizontal-menu-left">
-             <li class="item" ng-repeat="menuItem in horizontalMenuItems">
+             <li class="item" ng-repeat="menuItem in horizontalMenuItems track by $index">
                  <a class="item-descr clearfix" ui-sref="{{menuItem.href}}">{{menuItem.label}}</a>
              </li>
          </ul>
          <!-- END HORIZONTAL MENU LEFT -->
          
          <!-- menu right + search results list -->
-        <menu-horizontal-right> </menu-horizontal-right>         
-        <search></search>       
-         <!-- END menu right + search results list -->      
+        <menu-horizontal-right> </menu-horizontal-right>       
+        
+        <!--<search></search>   -->    
+         <!-- END menu right + search results list -->         
+         <div class="search-results">            
+            <ul class="search-results-list clearfix"> 
+                <li class="item" ng-repeat="searchItem in horizontalMenuItems track by $index">
+                     <a class="item-descr clearfix">{{searchItem.label}}</a>
+                </li>
+            </ul>    
+        </div>
    </nav>                       
 <!-- END HORIZONTAL MENU -->  
                          
