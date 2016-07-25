@@ -16,22 +16,11 @@ menuHorizontalModule.service('ReadItemsFromJson',['$resource','$q','$timeout',Re
                }    
             });
             
-            var itemsArray = itemsResource.query(url);
+            var itemsArray = itemsResource.query(url).$promise;
            
             console.log(url);
             
-            var deferred = $q.defer();
-            
-            $timeout(function(){
-                var successful = true;
-                if(successful){
-                    deferred.resolve(itemsArray);
-                }else{
-                    deferred.reject('Error retrieving menu items');
-                }
-            }, 6000);
-            
-            return deferred.promise;          
+         return  itemsArray;          
       }
   }  
 

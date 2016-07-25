@@ -9,7 +9,7 @@ menuHorizontalModule.directive('menuHorizontal', [
         return {
             restrict: 'E',
             controller:'horizontalMenuItemsCtrl',
-            templateUrl:'modules/menu-horizontal/view/menu-horizontal.template.html'
+            templateUrl:'modules/menu-horizontal/view/menu-horizontal.template.html',         
         };
     }
  ]);
@@ -18,7 +18,7 @@ menuHorizontalModule.directive('search',[
     function(){
         return{
             restrict:'E',
-            templateUrl:'modules/menu-horizontal/view/search-list.template.html'
+            templateUrl:'modules/menu-horizontal/view/search-list.template.html'      
         };
     }
 ]);

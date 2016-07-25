@@ -1,11 +1,9 @@
 <!-- SEARCH RESULTS -->
- <div class="search-results hide">            
-     <ul class="search-results-list clearfix"> 
-         <li ng-repeat="searchItem in searchListOptions" class="list-item clearfix">
-             <!--<img src="{{searchItem.image}}"  class="image-section" />-->
-             
-             <!--<span class='list-item-content'>{{searchItem.description.text}}</span><span class='info' >{{searchItem.info}}</span>-->
-             <span class='list-item-content'>{{searchItem.label}}</span>
+ <div class="search-results hide" ng-class="{'hide':searchListDisplayed === false}">            
+    <ul class="search-results-list clearfix">         
+         <li ng-repeat="searchItem in searchMenuItems track by $index" class="list-item clearfix">
+               <img src="{{searchItem.image}}"  class="image-section" />
+               <span class='list-item-content'>{{searchItem.description.text}}</span><span class='info' ></span>             
           </li>
       </ul>    
  </div>

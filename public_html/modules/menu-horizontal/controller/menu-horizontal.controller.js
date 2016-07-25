@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-menuHorizontalModule.controller('horizontalMenuItemsCtrl',['ReadItemsFromJson','$scope',horizontalMenuItemsCtrl]);     
+menuHorizontalModule.controller('horizontalMenuItemsCtrl',['ReadItemsFromJson','$scope',horizontalMenuItemsCtrl]);   
     function horizontalMenuItemsCtrl(ReadItemsFromJson,$scope){      
        ReadItemsFromJson.Items({itemsFile:'menu-horizontal'}).then(getItemsSuccess,getItemsError);   
        
@@ -18,8 +18,10 @@ menuHorizontalModule.controller('horizontalMenuItemsCtrl',['ReadItemsFromJson','
        }
     }  
 
-menuHorizontalModule.controller('MenuRightCtrl',['$scope',MenuRightCtrl]);  
-     function MenuRightCtrl($scope){
+menuHorizontalModule.controller('MenuRightCtrl',['ReadItemsFromJson','$scope',MenuRightCtrl]);  
+     function MenuRightCtrl(ReadItemsFromJson,$scope){
+         var self = this;
+         
          var rightMenuItems = [
              {
                  "label":"facebook",
@@ -37,40 +39,51 @@ menuHorizontalModule.controller('MenuRightCtrl',['$scope',MenuRightCtrl]);
                  "label":"user",
                  "href":"#"
              }             
-         ]   
-       $scope.rightMenuItems = rightMenuItems;       
-    }
-
-
-menuHorizontalModule.controller('searchItemsCtrl',['ReadItemsFromJson','$scope',searchItemsCtrl]); 
-    function searchItemsCtrl(ReadItemsFromJson,$scope){        
-        var scope = $scope;
-        
-        $scope.displaySearchListOptions = function(){
-            var searchedText  =  $scope.searchedText,
-                textLength    =  searchedText.length,
-                fileName      = 'search'+textLength;   
-        
-            if(textLength > 0){
-                ReadItemsFromJson.Items({itemsFile:'menu-horizontal'}).then(getItemsSuccess,getItemsError);   
-
-                function getItemsSuccess(items){                    
-                    console.log(items);                    
-                    scope.horizontalMenuItems  = items;                
-                }
-
-                function getItemsError(reason){
-                    console.log(reason);
-                }          
-            }                 
-        }             
-                     
+         ]
+         
+        self.rightMenuItems = rightMenuItems;      
+       
         $scope.searchAreaDisplayed = false;
+        $scope.searchListDisplayed = false;
         
         $scope.displaySearchArea = function(){
             $scope.searchAreaDisplayed = ($scope.searchAreaDisplayed === true) ? false : true;             
-        }        
-    }   
+        }                 
+        
+        $scope.displaySearchList = function(){
+            $scope.searchListDisplayed = ($scope.searchListDisplayed === true) ? false : true;
+        }
+         
+        self.displaySearchListOptions = function(){
+            var searchedText  =  $scope.searchedText,
+                textLength    =  searchedText.length,
+                fileName      = 'search'+textLength;
+                
+                console.log(textLength);
+        
+                if(textLength > 0){
+                    ReadItemsFromJson.Items({itemsFile:fileName}).then(getItemsSuccess,getItemsError);         
+
+                    var searchItems = [];    
+
+                    function getItemsSuccess(items){                   
+                        $.each(items, function(index){
+                           searchItems.push(items[index]);                     
+                        });                       
+                    }
+
+                    function getItemsError(reason){
+                        console.log(reason);
+                    }                 
+
+                    return searchItems;
+                }else{
+                    displaySearchList();
+                }                      
+        }      
+    }
+
+
 
 
   
